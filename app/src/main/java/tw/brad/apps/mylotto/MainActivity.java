@@ -2,6 +2,7 @@ package tw.brad.apps.mylotto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -23,27 +24,24 @@ public class MainActivity extends AppCompatActivity {
     public void createLotto1(View brad){
         String nums = newLotto(38, 6, true);
         mesg.setText(nums);
+        mesg.setTextColor(Color.BLUE);
     }
     public void createLotto2(View brad){
-        String nums = newLotto(49, 7, false);
+        String nums = newLotto(49, 6, false);
         mesg.setText(nums);
+        mesg.setTextColor(Color.RED);
     }
     public void createLotto3(View brad){
         String nums = newLotto(39, 5, false);
         mesg.setText(nums);
+        mesg.setTextColor(Color.BLACK);
     }
 
-    private String newLotto(int bigNum, int nums, boolean hasSpecical){
-        
-        return "WINNER";
-    }
-
-    public void createLotto(View view) {
+    private String newLotto(int bigNum, int nums, boolean hasSpecial){
         TreeSet<Integer> set = new TreeSet<>();
         String lotto = "";
-
-        while (set.size()<6){
-            int rand = (int)(Math.random()*38)+1;
+        while (set.size()<nums){
+            int rand = (int)(Math.random()*bigNum)+1;
             set.add(rand);
         }
 
@@ -51,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
             lotto += num + "  ";
         }
 
-        mesg.setText(lotto);
+        if (hasSpecial){
+            int special = (int)(Math.random()*8)+1;
+            lotto += "\n" + special;
+        }
+
+        return lotto;
     }
+
 }
