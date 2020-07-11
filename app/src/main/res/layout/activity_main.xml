@@ -18,7 +18,6 @@
         android:id="@+id/mesg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1  3  24  38  21  34"
         android:textSize="36sp"
         android:gravity="center_horizontal"
         android:textStyle="bold"

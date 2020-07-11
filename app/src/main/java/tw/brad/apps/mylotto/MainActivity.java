@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
             set.add(rand);
         }
 
-        mesg.setText(set.toString());
+        for (Integer num : set){
+            lotto += num + "  ";
+        }
+
+        mesg.setText(lotto);
     }
 }
