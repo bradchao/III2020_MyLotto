@@ -20,6 +20,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void createLotto1(View brad){
+        String nums = newLotto(38, 6, true);
+        mesg.setText(nums);
+    }
+    public void createLotto2(View brad){
+        String nums = newLotto(49, 7, false);
+        mesg.setText(nums);
+    }
+    public void createLotto3(View brad){
+        String nums = newLotto(39, 5, false);
+        mesg.setText(nums);
+    }
+
+    private String newLotto(int bigNum, int nums, boolean hasSpecical){
+        
+        return "WINNER";
+    }
+
     public void createLotto(View view) {
         TreeSet<Integer> set = new TreeSet<>();
         String lotto = "";
